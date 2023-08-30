@@ -2,7 +2,7 @@
 
 public class Circle : IShape
 {
-    private decimal Radius { get; }
+    private readonly decimal Radius;
 
     public Circle(decimal radius)
     {

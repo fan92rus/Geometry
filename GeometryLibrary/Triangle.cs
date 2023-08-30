@@ -2,16 +2,16 @@
 
 public class Triangle : IShape
 {
-    private decimal SideA { get; }
-    private decimal SideB { get; }
-    private decimal SideC { get; }
+    private readonly decimal SideA;
+    private readonly decimal SideB;
+    private readonly decimal SideC;
 
     public Triangle(decimal sideA, decimal sideB, decimal sideC)
     {
         SideA = sideA;
         SideB = sideB;
         SideC = sideC;
-        
+
         if (!Validate())
         {
             throw new ArgumentException("Треугольник не существует");
@@ -28,10 +28,7 @@ public class Triangle : IShape
         var s = (SideA + SideB + SideC) / 2;
         var sqr = (double)(s * (s - SideA) * (s - SideB) * (s - SideC));
         var area = Math.Sqrt(sqr);
-        if (double.IsNaN(area))
-        {
 
-        }
         return area;
     }
 
